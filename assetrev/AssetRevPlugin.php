@@ -73,9 +73,15 @@ class AssetRevPlugin extends BasePlugin
 	 */
 	public function getSettingsHtml()
 	{
-		return craft()->templates->render('assetrev/_settings', array(
-			'settings' => $this->getSettings(),
-			'basePath' => CRAFT_BASE_PATH,
-		));
+		$manifestPath = craft()->config->get('manifestPath', 'assetrev');
+		if($manifestPath) {
+			return "";
+		}
+		else {
+			return craft()->templates->render('assetrev/_settings', array(
+				'settings' => $this->getSettings(),
+				'basePath' => CRAFT_BASE_PATH,
+			));
+		}
 	}
 }
