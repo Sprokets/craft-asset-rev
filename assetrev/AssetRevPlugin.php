@@ -18,7 +18,7 @@ class AssetRevPlugin extends BasePlugin
 	 */
 	public function getVersion()
 	{
-		return '2.0.1';
+		return '3.0.0';
 	}
 
 	/**
@@ -28,7 +28,7 @@ class AssetRevPlugin extends BasePlugin
 	 */
 	public function getDeveloper()
 	{
-		return 'Club Studio Ltd';
+		return 'Sprokets';
 	}
 
 	/**
@@ -38,7 +38,7 @@ class AssetRevPlugin extends BasePlugin
 	 */
 	public function getDeveloperUrl()
 	{
-		return 'https://clubstudio.co.uk';
+		return 'https://github.com/Sprokets';
 	}
 
 	/**

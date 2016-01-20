@@ -1,3 +1,6 @@
+# Forked Version
+This version has been forked from [craft-asset-rev](https://github.com/clubstudioltd/craft-asset-rev) for use with Sprokets Craft sites. If you are not working on a Sprokets Craft site, please go check out the [original plugin](https://github.com/clubstudioltd/craft-asset-rev)!
+
 # CraftCMS Asset Rev (Cache Busting)
 A Twig extension for CraftCMS that allows you to swap out asset file names with their revved version, as defined in a JSON manifest file.
 
@@ -25,7 +28,7 @@ or
 <link rel="stylesheet" href="{{ url(rev('css/main.css')) }}">
 ```
 
-`css/main.css` will be replaced with the corresponding hashed filename as defined within your assets manifest .json file. 
+`css/main.css` will be replaced with the corresponding hashed filename as defined within your assets manifest .json file.
 
 If you'd like to pull the revised filename from a manifest file that is different to the one you specified within the plugin settings you can pass that through as a second argument.
 
