@@ -57,13 +57,15 @@ class AssetRevTwigExtension extends Twig_Extension
 
 		$manifestPath = substr($manifestPath, 0, 1) == "/" ? $manifestPath : CRAFT_BASE_PATH.$manifestPath;
 
+		$assetPrefix = craft()->config->get('assetPrefix', 'assetrev') ?: '';
+
 		// If the manifest file can't be found, we'll just return the original filename
 		if (!$this->manifestExists($manifestPath))
 		{
-			return $file;
+			return $assetPrefix . $file;
 		}
 
-		return $this->getAssetRevisionFilename($manifestPath, $file);
+		return $assetPrefix . $this->getAssetRevisionFilename($manifestPath, $file);
 	}
 
 	/**
@@ -88,6 +90,7 @@ class AssetRevTwigExtension extends Twig_Extension
 	 */
 	protected function getAssetRevisionFilename($manifestPath, $file)
 	{
+
 		if (is_null(self::$manifest))
 		{
 			self::$manifest = json_decode(file_get_contents($manifestPath), true);
